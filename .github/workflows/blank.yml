@@ -22,8 +22,8 @@ jobs:
        - name: Set the value
          id: step_one
          run: |
-           curl "https://example?token=$TESTY"
+           curl "https://example.com?token=${{secrets.TEST}}"
        
        - name: Run a one-line script
-         run: echo $GITHUB_ENV
+         run: curl "https://example.com?token=$TESTY"
 
