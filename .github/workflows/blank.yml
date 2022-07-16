@@ -23,5 +23,5 @@ jobs:
            echo "TESTY=${{secrets.TEST}}" >> $GITHUB_ENV
        
        - name: Run a one-line script
-         run: echo Hello, world!
+         run: echo $GITHUB_ENV
 
