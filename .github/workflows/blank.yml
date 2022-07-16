@@ -22,7 +22,7 @@ jobs:
        - name: Set the value
          id: step_one
          run: |
-           echo "hello"
+           curl "https://example?token=$TESTY"
        
        - name: Run a one-line script
          run: echo $GITHUB_ENV
