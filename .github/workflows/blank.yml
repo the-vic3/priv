@@ -16,10 +16,12 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: [self-hosted, linux, X64, label-1]
-    env:
-      TESTY:  ${{secrets.TEST}}
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Run a one-line script
-        run: echo Hello, world!
+       - name: Set the value
+         id: step_one
+         run: |
+           echo "TESTY=${{secrets.TEST}}" >> $GITHUB_ENV
+       
+       - name: Run a one-line script
+         run: echo Hello, world!
 
